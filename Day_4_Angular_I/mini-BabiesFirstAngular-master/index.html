@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head lang="en">
+  <meta charset="UTF-8">
+
+  <title>Angular Test</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="MainController">
+
+  <h1>Hello World!</h1>
+
+  <input type="text" placeholder="stuff" ng-model="stuff">
+
+  <h3>{{stuff}}</h3>
+
+  <div>
+    <form ng-submit="addUser()">
+      <input type="text" required placeholder="name" ng-model="newUser.name">
+      <input type="email" required placeholder="email" ng-model="newUser.email">
+      <input type="password" required placeholder="password" ng-model="newUser.password">
+      <button>Submit User</button>
+    </form>
+  </div>
+
+  <div ng-repeat="user in users">
+    <li>{{user.name}}, {{user.email}}</li>
+    <li>{{user.email}}</li>
+    <button ng-click="deleteUser($index)">Delete User</button>
+    <hr>
+  </div>
+
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controller.js"></script>
+
+</body>
+
+</html>

@@ -1,7 +1,10 @@
-var app = angular.module('Angular-Friends');
+/**
+ * Created by williambjohnson on 2/7/15.
+ */
+var app = angular.module('CCM');
 
-app.controller('FriendController', function($scope){
-  $scope.test = 'Friends';
+app.controller('PostController', function($scope){
+  $scope.test = 'Contingent Contract Management';
   $scope.posts = [];
   $scope.addPost = function(){
 
@@ -21,13 +24,21 @@ app.controller('FriendController', function($scope){
     if(direction === 'up'){
       $scope.posts[index].karma++
     } else if(direction === 'down'){
-      $scope.posts[index].karma--
-    }
-  };
+        $scope.posts[index].karma--
+      }
+    };
 
   $scope.submitComment = function(index, comment){
     $scope.posts[index].comments.push(comment);
     $scope.posts[index].commentForm = '';
   }
+
+
+
+
+
+
+
+
 
 });
